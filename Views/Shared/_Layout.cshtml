@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TP_Mi_Web_Personal_AGUSTIN_DE_MARCO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TP_Mi_Web_Personal_AGUSTIN_DE_MARCO.styles.css" asp-append-version="true" />
+</head>
+<body> 
+
+    <div class="sidebar">
+        <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="profile-img">
+        <h1 class="sidebar-title">@ViewBag.DatosPersonales.Nombre</h1>
+        <p class="sidebar-subtitle">@ViewBag.DatosPersonales.Subtitulo</p>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="@Url.Action("Index", "Home")">Sobre Mí</a>
+            <a class="nav-link" href="@Url.Action("Proyectos", "Home")">Proyectos</a>
+            <a class="nav-link" href="@Url.Action("Certificados", "Home")">Certificados</a>
+            <a class="nav-link" href="@Url.Action("Idiomas", "Home")">Idiomas</a>
+        </nav>
+    </div>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <p>&copy; 2024 @ViewBag.DatosPersonales.Nombre Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

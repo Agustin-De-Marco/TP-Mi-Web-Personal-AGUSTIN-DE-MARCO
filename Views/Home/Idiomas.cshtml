@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Idiomas";
+}
+
+<div class="content">
+    <section id="languages" class="section">
+        <h2 class="section-title">Idiomas</h2>
+        <div class="row">
+            @foreach (var idioma in ViewBag.Idiomas)
+            {
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background-image: url('@idioma.Imagen');">
+                                <!-- La imagen ocupará toda la parte frontal -->
+                            </div>
+                            <div class="flip-card-back">
+                                <h5 class="card-title">@idioma.Nombre</h5>
+                                <p class="card-text">@idioma.Nivel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    
+    <img src="img/earth.svg" class="earth" id="earth">
+    <img src="img/rocket.svg" class="rocket" id="rocket">
+    <img src="img/moon.svg" class="moon" id="moon">
+</div>
